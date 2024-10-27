@@ -28,7 +28,7 @@ struct LoginView: View {
     }
 }
 
-struct ContentView_Previews:
+struct LoginView_Previews:
     PreviewProvider{
     static var previews: some View{
         LoginView()

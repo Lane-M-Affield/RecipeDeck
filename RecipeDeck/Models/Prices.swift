@@ -4,7 +4,10 @@
 //
 //  Created by Lane Affield on 10/16/24.
 //
-//goal is to import the
-Import Foundation
+import Foundation
+//Struct for the user class
 
-
+struct Prices{
+    var item: String
+    var prices: [String: Double] = [:]
+}
