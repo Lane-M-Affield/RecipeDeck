@@ -38,7 +38,7 @@ struct UserPost: View {
         
     }
 }
-struct PostVIew_Previews:
+struct PostView_Previews:
     PreviewProvider{
     static var previews: some View{
         UserPost()

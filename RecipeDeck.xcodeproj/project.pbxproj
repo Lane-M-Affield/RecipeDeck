@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5F4E90172CEEFF8A005FED5A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4E90162CEEFF8A005FED5A /* FirebaseFirestore */; };
+		5F61C9BE2CE6A87B005C8A32 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5F61C9BD2CE6A87B005C8A32 /* FirebaseAuth */; };
+		5FB4646F2CE2A5B600107218 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB4646E2CE2A5B600107218 /* FirebaseAnalytics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5F6B52722CBAF32B00C9CE52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +35,30 @@
 		5F6B527B2CBAF32B00C9CE52 /* RecipeDeckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeDeckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5FB4646B2CE29F8B00107218 /* Exceptions for "RecipeDeck" folder in "RecipeDeckTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 5F6B52702CBAF32B00C9CE52 /* RecipeDeckTests */;
+		};
+		5FB4646C2CE29F8B00107218 /* Exceptions for "RecipeDeck" folder in "RecipeDeckUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"GoogleService-Info.plist",
+			);
+			target = 5F6B527A2CBAF32B00C9CE52 /* RecipeDeckUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5F6B52632CBAF32900C9CE52 /* RecipeDeck */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5FB4646B2CE29F8B00107218 /* Exceptions for "RecipeDeck" folder in "RecipeDeckTests" target */,
+				5FB4646C2CE29F8B00107218 /* Exceptions for "RecipeDeck" folder in "RecipeDeckUITests" target */,
+			);
 			path = RecipeDeck;
 			sourceTree = "<group>";
 		};
@@ -52,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB4646F2CE2A5B600107218 /* FirebaseAnalytics in Frameworks */,
+				5F61C9BE2CE6A87B005C8A32 /* FirebaseAuth in Frameworks */,
+				5F4E90172CEEFF8A005FED5A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +102,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F61C9BC2CE6A87A005C8A32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5F6B52582CBAF32900C9CE52 = {
 			isa = PBXGroup;
 			children = (
 				5F6B52632CBAF32900C9CE52 /* RecipeDeck */,
 				5F6B52742CBAF32B00C9CE52 /* RecipeDeckTests */,
 				5F6B527E2CBAF32B00C9CE52 /* RecipeDeckUITests */,
+				5F61C9BC2CE6A87A005C8A32 /* Frameworks */,
 				5F6B52622CBAF32900C9CE52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +150,9 @@
 			);
 			name = RecipeDeck;
 			packageProductDependencies = (
+				5FB4646E2CE2A5B600107218 /* FirebaseAnalytics */,
+				5F61C9BD2CE6A87B005C8A32 /* FirebaseAuth */,
+				5F4E90162CEEFF8A005FED5A /* FirebaseFirestore */,
 			);
 			productName = RecipeDeck;
 			productReference = 5F6B52612CBAF32900C9CE52 /* RecipeDeck.app */;
@@ -195,6 +236,9 @@
 			);
 			mainGroup = 5F6B52582CBAF32900C9CE52;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5FB4646D2CE2A5B600107218 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5F6B52622CBAF32900C9CE52 /* Products */;
 			projectDirPath = "";
@@ -552,6 +596,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FB4646D2CE2A5B600107218 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F4E90162CEEFF8A005FED5A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB4646D2CE2A5B600107218 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5F61C9BD2CE6A87B005C8A32 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB4646D2CE2A5B600107218 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5FB4646E2CE2A5B600107218 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB4646D2CE2A5B600107218 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F6B52592CBAF32900C9CE52 /* Project object */;
 }

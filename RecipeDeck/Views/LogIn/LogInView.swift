@@ -6,31 +6,47 @@
 //
 import SwiftUI
 
-struct LoginView: View {
+struct LogInView: View {
+    @Binding var showSignInView: Bool
     var body: some View{
-        ZStack{
-            VStack{
-                Text("Recipe Deck")
-                    .font(.title)
-                Spacer()
-                Form {
-                    Button("Log In") {
-                        print("Login")
-                    
-                    }
-                    Button("Sign Up"){
-                        print("sign up")
-                    }
-                }
+        VStack{
+            NavigationLink{
+                LogInForm(showSignInView: $showSignInView)
+            } label: {
+                Text("Sign in w/ Email")
+                    .padding()
+                    .font(.headline)
+                    .font(.custom("Georgia", size: 16))
+                    .foregroundColor(.white)
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.black)
+                    .cornerRadius(10)
+            }
+            NavigationLink {
+                            SignUpForm(showSignUpView: $showSignInView) // Assuming SignUpForm exists
+                        } label: {
+                            Text("Sign up with Email")
+                                .padding()
+                                .font(.headline)
+                                .font(.custom("Georgia", size: 16))
+                                .foregroundColor(.white)
+                                .frame(height: 50)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.black) // Differentiate from sign-in button
+                                .cornerRadius(10)
+                        }
+            
 
             }
         }
     }
-}
 
 struct LoginView_Previews:
     PreviewProvider{
     static var previews: some View{
-        LoginView()
+        NavigationStack{
+            LogInView(showSignInView: .constant(false))
+        }
     }
 }
