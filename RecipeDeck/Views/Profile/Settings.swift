@@ -18,6 +18,10 @@ final class SettingsViewModel: ObservableObject {
             throw URLError(.fileDoesNotExist)
         }
         try await AuthenticationManager.shared.resetPassword(email: email)
+    
+    }
+    func deleteAccount() async throws {
+        try await AuthenticationManager.shared.delete()
     }
 }
 
@@ -42,9 +46,25 @@ struct SettingsView: View {
                 catch{print(error)}}
             }
             .navigationBarTitle("Settings")
+            
+            Button(role: .destructive){
+                Task {
+                    do {
+                        try await viewModel.deleteAccount()
+                        showSignInView = true
+                    } catch {
+                        print(error)
+                    }
+                }
+            } label: {
+                Text("delete Account")
+                
+            }
         }
     }
 }
+        
+        
 struct SettingsView_Previews: PreviewProvider{
     static var previews: some View {
         NavigationStack{
